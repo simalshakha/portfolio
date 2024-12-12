@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simal Shakha</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('Blue White and Yellow Secondary School Physics Class Animated Zoom Virtual Background.gif');  /* Path to your image */
+            background-size: cover;                  /* Ensures the image covers the entire page */
+            background-position: center;             /* Centers the image */
+            background-attachment: fixed;            /* Fixes the image while scrolling */
+            color: #ffffff;
+            text-align: center;
+        }
+        #greeting-container, #main-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        #main-content {
+            display: none;
+            opacity: 0;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Greeting -->
+    <div id="greeting-container">
+        <h1>Greetings!</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <h1>Hi, I'm Simal Shakha</h1>
+        <p>A Computer Engineering Student passionate about technology and innovation.</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>document.addEventListener('DOMContentLoaded', () => {
+        const greetingContainer = document.getElementById('greeting-container');
+        const mainContent = document.getElementById('main-content');
+    
+        // Show greeting for 2 seconds, then transition to main content
+        setTimeout(() => {
+            greetingContainer.style.opacity = '0'; // Fade out the greeting
+            greetingContainer.style.transition = 'opacity 1s';
+    
+            // After fade out, hide greeting and show main content
+            setTimeout(() => {
+                greetingContainer.style.display = 'none';
+                mainContent.style.display = 'block';
+                mainContent.style.opacity = '1'; // Fade in main content
+                mainContent.style.transition = 'opacity 1s';
+            }, 1000); // Matches the transition duration
+        }, 2000); // Delay for 2 seconds before transitioning
+    });
+    </script>
+</body>
+</html>
